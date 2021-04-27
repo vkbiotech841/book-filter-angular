@@ -1,0 +1,81 @@
+// fonts
+// @font-face {
+//   font-family: "poppins";
+//   src: url("assets/fonts/Poppins-Regular.ttf") format("truetype"); /* Safari, Android, iOS */
+// }
+// @font-face {
+//   font-family: "Noto Sans";
+//   src: url("assets/fonts/NotoSans-Regular.ttf") format("truetype"); /* Safari, Android, iOS */
+// }
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../fonts/Montserrat-Regular.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: "Montserrat SemiBold";
+  src: url("../../fonts/Montserrat-SemiBold.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+
+.body {
+  font-family: "Montserrat";
+  font-size: 16px;
+  color: #333333;
+}
+
+//////////// Global Fonts starts here ///////////////////////////////
+.ns-font {
+  font-family: "Montserrat";
+}
+.p-font {
+  font-family: "Montserrat";
+}
+
+p {
+  font-family: "Montserrat";
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat";
+}
+
+a {
+  font-family: "Montserrat";
+}
+
+span {
+  font-family: "Montserrat";
+}
+
+div {
+  font-family: "Montserrat";
+}
+
+strong {
+  font-family: "Montserrat";
+}
+
+b {
+  font-family: "Montserrat";
+}
+
+small {
+  font-family: "Montserrat";
+}
+
+.btn {
+  font-family: "Montserrat";
+}
+
+.heading-1 {
+  font-style: "Montserrat SemiBold" !important;
+  font-size: 48 px !important;
+}
+
+//////////// Fonts ends here ///////////////////////////////

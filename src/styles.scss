@@ -1,1 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/scss/bootstrap";
+@import "~bootstrap/dist/css/bootstrap.css";
+
+@import "./assets/styles/utilities/fonts.scss";
+@import "./assets/styles/utilities/common.scss";
+@import "./assets/styles/variables/colors.scss";
+// @import "./assets//styles/components/button.scss";
+@import "./assets/styles/components/theme.scss";
+@import "./assets/styles/utilities/typography.scss";
+
+// regular style toast
+@import "~ngx-toastr/toastr";
+
+.blue-color {
+  color: #5e56e7;
+}
+
+.light-grey-color {
+  color: #f8f7ff;
+}
+
+.greys-1 {
+  color: #f0f0f6;
+}
+
+.greys-2 {
+  color: #a0a0a0;
+}
+
+.greys-3 {
+  color: #333333;
+}
+
+.fs-regular {
+  font-style: "Montserrat";
+}
+
+.fs-semibold {
+  font-style: "Montserrat SemiBold";
+}
