@@ -80,6 +80,8 @@ export class TopicComponent implements OnInit {
       bookUrlTobeOpened = book.formats["application/pdf"]
     } else if (book.formats["text/plain"]) {
       bookUrlTobeOpened = book.formats["text/plain"]
+    } else if (book.formats["application/zip"]) {
+      bookUrlTobeOpened = 'https://docs.google.com/viewer?url=' + book.formats["application/zip"]
     }
 
     if (bookUrlTobeOpened) {
