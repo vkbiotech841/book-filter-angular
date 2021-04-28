@@ -75,6 +75,7 @@ export class TopicComponent implements OnInit {
 
 
   debounceTimer: any;
+
   searchTextOnDebounce() {
     if (this.debounceTimer) {
       clearTimeout(this.debounceTimer);
@@ -91,9 +92,7 @@ export class TopicComponent implements OnInit {
     this.filter.search = "";
     this.onSearchTextChange();
     this.isOutline = false;
-  }
-
-
+  };
 
   onScroll() {
     if (this.loadingData) {
@@ -124,14 +123,14 @@ export class TopicComponent implements OnInit {
 
 
   isOutline: boolean = false;
+
   inputBoxClicked() {
     this.isOutline = !this.isOutline;
-
-  }
+  };
 
   browserBack() {
     window.history.back()
-  }
+  };
 
 
 
