@@ -129,6 +129,9 @@ export class TopicComponent implements OnInit {
 
   }
 
+  browserBack() {
+    window.history.back()
+  }
 
 
 

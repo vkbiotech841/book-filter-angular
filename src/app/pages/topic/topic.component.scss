@@ -1,6 +1,6 @@
 .section-layout {
   background: #f8f7ff;
-  margin-top: 5%;
+  margin-top: -2%;
   margin-bottom: 5%;
   height: calc(100vh - 150px);
 }
@@ -94,4 +94,15 @@ input:focus {
 
 .input-outline {
   border: 1px solid #5e56e7;
+}
+
+.header-2 {
+  font-family: "Montserrat SemiBold";
+  font-size: 30px;
+  color: #5e56e7;
+}
+
+.back-arrow {
+  color: #5e56e7;
+  margin-top: 6px;
 }
