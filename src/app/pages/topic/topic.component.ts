@@ -70,6 +70,19 @@ export class TopicComponent implements OnInit {
     this.getFilteredBooks();
   };
 
+
+  debounceTimer: any;
+  searchTextOnDebounce() {
+    if (this.debounceTimer) {
+      clearTimeout(this.debounceTimer);
+    }
+    this.debounceTimer = setTimeout(() => {
+      this.onSearchTextChange();
+    }, 1 * 1000);
+  };
+
+
+
   onScroll() {
     if (this.loadingData) {
       return;
