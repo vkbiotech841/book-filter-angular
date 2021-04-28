@@ -54,7 +54,10 @@ export class TopicComponent implements OnInit {
         } else {
           this.isAllDataLoaded = true;
         }
-        this.filteredBooks = this.filteredBooks.concat(result.results);
+        const booksWithCoverImage = result.results.filter(x => {
+          return x.formats['image/jpeg'];
+        })
+        this.filteredBooks = this.filteredBooks.concat(booksWithCoverImage);
         this.loadingData = false;
         console.log("filterd books", this.filteredBooks);
 
@@ -80,6 +83,15 @@ export class TopicComponent implements OnInit {
       this.onSearchTextChange();
     }, 1 * 1000);
   };
+
+  clearSearchText() {
+    if (this.debounceTimer) {
+      clearTimeout(this.debounceTimer);
+    }
+    this.filter.search = "";
+    this.onSearchTextChange();
+    this.isOutline = false;
+  }
 
 
 
@@ -109,6 +121,13 @@ export class TopicComponent implements OnInit {
       this.utilityService.showError("No viewable version available");
     }
   };
+
+
+  isOutline: boolean = false;
+  inputBoxClicked() {
+    this.isOutline = !this.isOutline;
+
+  }
 
 
 
