@@ -33,8 +33,13 @@ export class LandingPageComponent implements OnInit {
 
   topics = [
     "fiction",
-
-  ]
+    "PHILOSOPHY",
+    "drama",
+    "history",
+    "humor",
+    "adventure",
+    "politics"
+  ];
 
 
 

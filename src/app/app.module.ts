@@ -10,13 +10,15 @@ import { HttpClientModule } from "@angular/common/http";
 import { FilterPageComponent } from './pages/filter-page/filter-page.component';
 import { TopicComponent } from './pages/topic/topic.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoadingSpinnerComponent } from './shared/components/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
     FilterPageComponent,
-    TopicComponent
+    TopicComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,
