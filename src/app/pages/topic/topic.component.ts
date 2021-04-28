@@ -129,7 +129,7 @@ export class TopicComponent implements OnInit {
   };
 
   browserBack() {
-    window.history.back()
+    (window as any).history.back()
   };
 
 

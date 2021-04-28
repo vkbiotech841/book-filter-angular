@@ -31,7 +31,7 @@
 
     <div class="container">
         <div class="container-fluid">
-            <div infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScroll()">
+            <div infiniteScroll [infiniteScrollDistance]="1" [infiniteScrollThrottle]="10" (scrolled)="onScroll()">
                 <div class="parent">
                     <div class="child pointer" *ngFor="let book of  filteredBooks" (click)="openBook(book)">
                         <span class="">
