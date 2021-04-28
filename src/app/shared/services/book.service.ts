@@ -28,7 +28,7 @@ export class BookService {
   ) { }
 
   // baseUrl: string = "http://skunkworks.ignitesol.com:8000/books";
-  baseUrl: string = "http://gutendex.com/books";
+  baseUrl: string = "https://gutendex.com/books";
 
 
   getBooks(): Observable<any> {
