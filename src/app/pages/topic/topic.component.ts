@@ -1,3 +1,4 @@
+import { UtilityService } from './../../shared/services/utility.service';
 import { BookService, BookFilter } from './../../shared/services/book.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -13,7 +14,8 @@ export class TopicComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private bookService: BookService
+    private bookService: BookService,
+    private utilityService: UtilityService
   ) { }
 
   ngOnInit(): void {
@@ -42,8 +44,11 @@ export class TopicComponent implements OnInit {
       this.filteredBooks = [];
     }
     this.loadingData = true;
+    console.log("parameters for filtering", this.filter);
     this.bookService.getFilterdBooks(this.filter)
       .subscribe(result => {
+        console.log("filtered result", result);
+        // This is for identifing, if next page is available.
         if (result.next) {
           this.isAllDataLoaded = false;
         } else {
@@ -51,18 +56,19 @@ export class TopicComponent implements OnInit {
         }
         this.filteredBooks = this.filteredBooks.concat(result.results);
         this.loadingData = false;
-        console.log("filterd result", this.filteredBooks);
+        console.log("filterd books", this.filteredBooks);
 
       }, error => {
         this.loadingData = false;
+        this.utilityService.showError(error, "Something Went Wrong!");
       });
-  }
+  };
 
   onSearchTextChange() {
     this.filter.page = 1;
     this.isAllDataLoaded = false;
     this.getFilteredBooks();
-  }
+  };
 
   onScroll() {
     if (this.loadingData) {
@@ -70,7 +76,7 @@ export class TopicComponent implements OnInit {
     }
     this.filter.page += 1;
     this.getFilteredBooks();
-  }
+  };
 
   openBook(book) {
     let bookUrlTobeOpened;
@@ -87,9 +93,9 @@ export class TopicComponent implements OnInit {
     if (bookUrlTobeOpened) {
       window.open(bookUrlTobeOpened, '_target')
     } else {
-      window.alert("No viewable version available");
+      this.utilityService.showError("No viewable version available");
     }
-  }
+  };
 
 
 

@@ -27,8 +27,8 @@ export class BookService {
     private http: HttpClient,
   ) { }
 
-  // baseUrl: string = "http://skunkworks.ignitesol.com:8000/books";
   baseUrl: string = "https://gutendex.com/books";
+  // baseUrl: string = "​https://skunkworks.ignitesol.com/books";
 
 
   getBooks(): Observable<any> {
@@ -38,10 +38,12 @@ export class BookService {
   }
 
   getFilterdBooks(filter: BookFilter): Observable<any> {
-    // filter.mime_type = "images/";
+    // filter.mime_type = "text%2F​";
     const url = new URL(this.baseUrl);
     for (const key of Object.keys(filter)) {
       url.searchParams.set(key, filter[key]);
+      console.log("key", key, "filter[key]", filter[key]);
+      console.log("url.href", url.href);
     }
     return this.http
       .get(url.href)

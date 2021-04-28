@@ -11,6 +11,7 @@ import { FilterPageComponent } from './pages/filter-page/filter-page.component';
 import { TopicComponent } from './pages/topic/topic.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoadingSpinnerComponent } from './shared/components/loading-spinner/loading-spinner.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { LoadingSpinnerComponent } from './shared/components/loading-spinner/loa
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

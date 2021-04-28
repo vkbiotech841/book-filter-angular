@@ -18,19 +18,19 @@
         <div class="container-fluid">
             <div infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScroll()">
                 <div class="parent">
-                    <div class="child" *ngFor="let book of  filteredBooks" (click)="openBook(book)">
+                    <div class="child pointer" *ngFor="let book of  filteredBooks" (click)="openBook(book)">
                         <span class="">
                             <img [src]="book.formats['image/jpeg']" alt="" class="book-image">
                         </span>
                         <div class="book-name mt-2">
-                            <strong>
+                            <strong *ngIf="book.title">
                                 {{(book.title | slice:0:25 | uppercase) + (book.title.length > 25 ?
                                 '...'
                                 : '')}}
 
                             </strong>
                         </div>
-                        <div class="author-name mt-1">{{book.authors[0].name}}</div>
+                        <div class="author-name mt-1" *ngIf="book">{{book.authors[0].name}}</div>
                     </div>
                 </div>
             </div>
