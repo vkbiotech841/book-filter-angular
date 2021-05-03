@@ -76,12 +76,13 @@ export class TopicComponent implements OnInit {
     }
     this.debounceTimer = setTimeout(() => {
       this.onSearchTextChange();
-    }, 1 * 1000);
+    }, 2 * 1000);
   };
 
-
+  searchTerm: string = "";
   onSearchTextChange() {
     this.filter.page = 1;
+    this.filter.search = this.searchTerm;
     this.isAllDataLoaded = false;
     this.getFilteredBooks();
   };
@@ -91,6 +92,7 @@ export class TopicComponent implements OnInit {
     if (this.debounceTimer) {
       clearTimeout(this.debounceTimer);
     }
+    this.searchTerm = "";
     this.filter.search = "";
     this.onSearchTextChange();
     this.isOutline = false;

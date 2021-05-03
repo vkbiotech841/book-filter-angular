@@ -14,7 +14,7 @@
                     <i class="fa fa-search" aria-hidden="true"></i>
                 </div>
                 <span class="square-input-box" style="margin-top: -4%;" (click)="inputBoxClicked()">
-                    <input type="text" class="input-field" type="text" placeholder="Search" [(ngModel)]="filter.search"
+                    <input type="text" class="input-field" type="text" placeholder="Search" [(ngModel)]="searchTerm"
                         (keyup)="searchTextOnDebounce()" />
                 </span>
             </div>
