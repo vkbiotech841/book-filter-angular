@@ -35,10 +35,9 @@ export class BookService {
     return this.http
       .get(this.baseUrl)
       .pipe(map(this.extractData));
-  }
+  };
 
   getFilterdBooks(filter: BookFilter): Observable<any> {
-    // filter.mime_type = "text%2F​";
     const url = new URL(this.baseUrl);
     for (const key of Object.keys(filter)) {
       url.searchParams.set(key, filter[key]);
@@ -48,5 +47,8 @@ export class BookService {
     return this.http
       .get(url.href)
       .pipe(map(this.extractData));
-  }
+  };
+
+
+
 }

@@ -67,12 +67,6 @@ export class TopicComponent implements OnInit {
       });
   };
 
-  onSearchTextChange() {
-    this.filter.page = 1;
-    this.isAllDataLoaded = false;
-    this.getFilteredBooks();
-  };
-
 
   debounceTimer: any;
 
@@ -84,6 +78,14 @@ export class TopicComponent implements OnInit {
       this.onSearchTextChange();
     }, 1 * 1000);
   };
+
+
+  onSearchTextChange() {
+    this.filter.page = 1;
+    this.isAllDataLoaded = false;
+    this.getFilteredBooks();
+  };
+
 
   clearSearchText() {
     if (this.debounceTimer) {
