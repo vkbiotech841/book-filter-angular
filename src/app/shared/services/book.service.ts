@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from "rxjs/operators";
+import { BaseApiUrl } from '../../base_api/base-api-urls';
 
 export interface BookFilter {
   topic?: string;
@@ -27,17 +28,17 @@ export class BookService {
     private http: HttpClient,
   ) { }
 
-  baseUrl: string = "https://gutendex.com/books";
-  // baseUrl: string = "​https://skunkworks.ignitesol.com/books";
+  // baseUrl: string = "https://gutendex.com/books";
+  private baseUrl: string = BaseApiUrl.Books;
 
 
-  getBooks(): Observable<any> {
+  public getBooks(): Observable<any> {
     return this.http
       .get(this.baseUrl)
       .pipe(map(this.extractData));
   };
 
-  getFilterdBooks(filter: BookFilter): Observable<any> {
+  public getFilterdBooks(filter: BookFilter): Observable<any> {
     const url = new URL(this.baseUrl);
     for (const key of Object.keys(filter)) {
       url.searchParams.set(key, filter[key]);
